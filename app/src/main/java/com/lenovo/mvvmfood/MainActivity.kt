@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lenovo.mvvmfood.adapter.FoodAdapter
@@ -26,7 +25,6 @@ class MainActivity : AppCompatActivity() {
         val foodAdapter =
             FoodAdapter(dataList, this)
 
-        dataBind.foodMenuRecy.layoutManager = LinearLayoutManager(this)
         dataBind.foodMenuRecy.adapter = foodAdapter
 
         foodViewModel.getFoodData("584be421b1413d5eb0340d422d5b0d53").observe(this,

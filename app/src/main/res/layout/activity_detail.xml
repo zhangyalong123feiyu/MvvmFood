@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <import type="com.lenovo.mvvmfood.bean.FoodDetail.ResultBean.DataBean"/>
         <variable
-            name="FoodData"
-            type="com.lenovo.mvvmfood.bean.FoodMenuBean.Food.FoodMenuD" />
+            name="foodDetail"
+            type="java.util.ArrayList&lt;DataBean>" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,15 +15,12 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-        <TextView
-            android:id="@+id/food_name"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/foodMenuRecy"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:bindRecyleData="@{foodDetail}"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@{FoodData.name,default=zhangsan}"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="0dp" />
-
-
+            android:layout_height="match_parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

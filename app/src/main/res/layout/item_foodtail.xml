@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name="FoodData"
-            type="com.lenovo.mvvmfood.bean.FoodMenuBean.Food.FoodMenuD" />
+            name="foodDetail"
+            type="com.lenovo.mvvmfood.bean.FoodDetail.ResultBean.DataBean" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,11 +14,11 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-        <TextView
+        <ImageView
             android:id="@+id/food_name"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@{FoodData.name,default=zhangsan}"
+            app:imageUrl="@{foodDetail.steps.get(0).img}"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="0dp" />
 
